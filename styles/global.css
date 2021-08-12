@@ -1,0 +1,29 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Gordita';
+  src: local("Gordita"), url("https://public.powrcdn.com/fonts/gordita/gordita-regular-webfont-woff.woff") format("woff"), url("https://public.powrcdn.com/fonts/gordita/gordita-regular-webfont-woff2.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gordita Bold';
+  src: local("Gordita Bold"), url("https://public.powrcdn.com/fonts/gordita/gordita-bold-webfont-woff.woff") format("woff"), url("https://public.powrcdn.com/fonts/gordita/gordita-bold-webfont-woff2.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gordita Medium';
+  src: local("Gordita Medium"), url("https://public.powrcdn.com/fonts/gordita/gordita-medium-webfont-woff.woff") format("woff"), url("https://public.powrcdn.com/fonts/gordita/gordita-medium-webfont-woff2.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    font-family: "Gordita";
+}

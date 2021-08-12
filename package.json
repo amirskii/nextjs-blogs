@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "build": "next build && next export"
+    "build": "next build && next export",
+    "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.1",
     "gray-matter": "^4.0.3",
     "next": "^11.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
