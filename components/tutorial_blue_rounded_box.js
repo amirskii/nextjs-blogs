@@ -1,4 +1,4 @@
-import TutorialPicture from "./tutorial_picture";
+import TutorialPictureCentered from "./tutorial_picture_centered";
 
 export default function BlueRoundedBox(props) {
   return (

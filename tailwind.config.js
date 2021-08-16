@@ -23,7 +23,12 @@ module.exports = {
         'paragraph': '#636B75',
         'color7': '#354051',
         'color6-light': '#F8F9FA',
-        'color6-dark': '#E0E6EA'
+        'color6-dark': '#E0E6EA',
+        'blue-200':'#95CEFF',
+        'blue-50': '#E4F3FF',
+        'yellow-100':' #FFE5B3',
+        'yellow-50': '#FFF5E0',
+        'color8': '#A0ABBE',
       },
       textColor: {
         '[muted]': '#848e9c',
@@ -40,6 +45,7 @@ module.exports = {
         'color6': '#eff2f4',
         '[color7]': '#354051',
         'orange-300': '#FFD480',
+        'blue-gray-50': '#EAEEF7'
       },
     },
   },

@@ -27,7 +27,7 @@ export default function Layout({ children }) {
       <header
         className={styles2.header}
         >
-        <div className="flex flex-col w-full max-w-full z-10">
+        <div className="flex flex-col w-full max-w-full z-10 pb-0 md:pb-48 lg:pb-0">
           <div className="container max-w-[1140px] px-4 self-center">
             <div className="mt-3 md:mt-8">
               <a
@@ -94,7 +94,7 @@ export default function Layout({ children }) {
         <div className={styles2.headerbg}>
           <img
               alt="POWR white wave"
-              className="w-full max-w-full mt-auto -mb-3 md:-mb-8 lg:-mb-10"
+              className="w-full max-w-full mt-auto -mb-3 md:-mb-8 lg:-mb-11"
               src="https://www.powrcdn.com/tutorial_pages_new_design/wave-top.svg"
             />
         </div>

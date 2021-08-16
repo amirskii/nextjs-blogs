@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout_tut'
 import TutorailParagraph from '../components/tutorial_paragraph'
 import TutorailHeader20 from '../components/tutorial_header20'
 import TutorailHeader24 from '../components/tutorial_header24'
+import TutorailHeader32 from '../components/tutorial_header32'
 import CenteredContainer from '../components/tutorial_centered_container'
 import utilStyles from '../styles/utils.module.css'
 import QuotedBox from '../components/tutorial_quote_box'
@@ -16,7 +17,12 @@ import TutorailButtonWhite from '../components/tutorial_button_white'
 import TutorailParagraph20 from '../components/tutorial_paragraph20'
 import styles from '../components/layout.module.css'
 import TutorailHeader26 from '../components/tutorial_header26'
+import TutorialAppBox from '../components/tutorial_app_box'
 import TestimonialFilled from '../components/TestimonialFilled'
+import BlueGrayRoundedBox from '../components/tutorial_blue-gray_rounded_box'
+import tutorialData from './data.js'
+import TutorialAppBoxYellow from '../components/tutorial_app_box_yellow'
+import TutorialMenu from '../components/tutorial_menu'
 
 
 export async function getStaticProps() {
@@ -28,38 +34,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  const data = {
-    platform: 'HTML',
-    app_name: 'About Us',
-    app_type: 'Plugin',
-    testimonials: [
-      {
-        title: "Simple",
-        text: "Easy to navigate for a non-tech person like me. Tried so many apps, and this is the best combination of great features for any shop.",
-        author: "Pasar Segar | The Fresh Market on ",
-        app: "Form Builder",
-        link: "https://www.powr.io/plugins/form-builder/standalone",
-        webp: "https://www.powrcdn.com/tutorials/testimonial-photo1.webp",
-        png: "https://www.powrcdn.com/tutorial_pages_new_design/testimonial-photo1.png"
-      }, {
-        title: "This app was seamless",
-        text: "It helped me get my website traffic to engage on more platforms! I would highly recommended to anyone!",
-        author: "C.G. Harrison & Co on ",
-        app: "Photo Gallery",
-        link: "https://www.powr.io/plugins/instagram-feed/standalone",
-        webp: "https://www.powrcdn.com/tutorials/testimonial-photo2.webp",
-        png: "https://www.powrcdn.com/tutorial_pages_new_design/testimonial-photo2.png"
-      }, {
-        title: "I am really enjoying this app so far",
-        text: "I was surprised that Shopify didn`t have a built in function for something like this, but glad your app fits the bill.",
-        author: "UL Press on ",
-        app: "Photo Gallery",
-        link: "https://www.powr.io/plugins/photo-gallery/standalone",
-        webp: "https://www.powrcdn.com/tutorials/testimonial-photo3.webp",
-        png: "https://www.powrcdn.com/tutorial_pages_new_design/testimonial-photo3.png"
-      }
-    ]
-  }
+  const data = tutorialData;
 
   return (
     <Layout>
@@ -473,10 +448,10 @@ export default function Home({ posts }) {
           <div className="flex flex-col mt-16">
             <div className="flex flex-col md:flex-row md:justify-evenly">
               
-              <div className="relative px-4 text-center box-border md:float-left md:w-1/3">
+              <div className="mt-8 relative px-4 text-center box-border md:float-left md:w-1/3">
                 <div class="box-border flex justify-center">
                   <img 
-                    className="mb-4 h-12 max-w-full align-middle border-0"
+                    className="h-12 max-w-full align-middle border-0"
                     src="https://www.powrcdn.com/tutorial_pages_new_design/vector-1.svg"
                   />
                 </div>
@@ -485,10 +460,10 @@ export default function Home({ posts }) {
                 </TutorailHeader20>
               </div>
 
-              <div className="relative px-4 text-center box-border md:float-left md:w-1/3">
+              <div className="mt-8 relative px-4 text-center box-border md:float-left md:w-1/3">
                 <div class="box-border flex justify-center">
                   <img 
-                    className="mb-4 h-12 max-w-full align-middle border-0"
+                    className="h-12 max-w-full align-middle border-0"
                     src="https://www.powrcdn.com/tutorial_pages_new_design/vector-2.svg"
                   />
                 </div>
@@ -497,7 +472,7 @@ export default function Home({ posts }) {
                 </TutorailHeader20>
               </div>
 
-              <div className="relative px-4 text-center box-border md:float-left md:w-1/3">
+              <div className="mt-8 relative px-4 text-center box-border md:float-left md:w-1/3">
                 <div class="box-border flex justify-center">
                   <img 
                     className="mb-4 h-12 max-w-full align-middle border-0"
@@ -505,7 +480,7 @@ export default function Home({ posts }) {
                   />
                 </div>
                 <TutorailHeader20 className="mt-4">
-                  Visitors spent <span className="text-color1">2.5x longer</span>  on their site
+                  Visitors spent <span className="text-color1">2.5x longer</span> on their site
                 </TutorailHeader20>
               </div>
 
@@ -513,8 +488,212 @@ export default function Home({ posts }) {
           </div>
         </CenteredContainer>
       </section>
+      
+      <section className="flex flex-col">
+        <CenteredContainer>
+          <BlueGrayRoundedBox className="mt-28">
+            <div className="flex flex-col ontent-center items-center md:flex-row">
+              <img 
+                className="md:w-1/4"
+                src="https://www.powrcdn.com/tutorial_pages_new_design/undraw.svg"
+              />
 
+              <div className="w-auto mt-8 md:ml-8 flex flex-col content-center items-center my-auto">
+                <TutorailHeader20>
+                  Do you {data.build[0]} sites for clients and charge hosting fees?
+                </TutorailHeader20>
+                <TutorailParagraph className="mt-4">
+                  Then you'd be {data.happy[0]} to know agency users have 
+                  <span class="text-color1"> reported 100% uptime </span>and
+                  <span class="text-color1"> {data.tons[0]} of hours saved</span> every week with the ability to {data.create[0]} client apps in a matter of minutes. "
+                </TutorailParagraph>
+              </div>
+            </div>
+          </BlueGrayRoundedBox>
+        </CenteredContainer>
+      </section>           
 
+      <section className="flex flex-col mt-24">
+        <CenteredContainer className="max-w-[748px]">
+          <TutorailHeader24 className="text-center">
+            Just one POWR account gives you {data.accessTo[0]} every app in our {data.suite[0]}.
+          </TutorailHeader24>
+          <TutorailParagraph className="mt-4 text-center">
+            {data.instantly[0]} use over 60 apps such as Social Media Feeds, Instagram Feeds, Pop Ups, Contact Form Builder, 
+            Countdown Timers, FAQ Accordion, Gallery, Slideshows, Lookbook, and more for stellar landing page conversion and 
+            customer service. POWR apps {data.integrate[0]} with many platforms such as Mail chimp, YouTube, Vimeo, Facebook, Instagram, Twitter, Pinterest, and more!
+          </TutorailParagraph>
+        </CenteredContainer>
+      </section>           
+
+      <section className="flex flex-col">
+        <CenteredContainer className="mt-16">
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-1/2 md:mr-4">
+              <div className="border-t-4 border-blue-200 md:px-12 py-10 md:py-20">
+                <TutorailHeader32>
+                  Apps for Lead Generation
+                </TutorailHeader32>
+                <TutorailParagraph className="mt-4">
+                  After you get visitors to your site it is {data.important[0]} to get their contact information. This is called lead collection. 
+                  There are many POWR apps that can help you do this on your {data.platform} website, and the best part is you can {data.getStarted[0]} today for free. Let's take a look at the three most popular apps for lead generation.
+                </TutorailParagraph>
+              </div>
+            </div>
+
+            <div className="md:w-1/2 md:ml-4">
+              <TutorialAppBox
+                img="https://www.powrcdn.com/tutorial_pages_new_design/form-builder.svg"
+                title={data.formBuilder.title}
+                text={data.formBuilder.description}
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row mt-6 md:mt-8">
+            <div className="md:w-1/2 md:mr-4">
+              <TutorialAppBox
+                img="https://www.powrcdn.com/tutorial_pages_new_design/popup.svg"
+                title={data.popUp.title}
+                text={data.popUp.description}
+              />
+            </div>
+            <div className="md:w-1/2 mt-6 md:mt-0 md:ml-4 flex">
+              <TutorialAppBox
+                img="https://www.powrcdn.com/tutorial_pages_new_design/facebook-chat.svg"
+                title={data.facebookChat.title}
+                text={data.facebookChat.description}
+              />
+            </div>
+          </div>
+        </CenteredContainer>
+      </section> 
+
+      <section className="mt-16 flex justify-center">
+        <TutorailHeader24 className="max-w-[940px] text-center">
+          From a <span className="text-color1">250% {data.boost[0]} in new leads</span>, to 100% uptime for {data.customers[0]}, POWR Heroes have 
+          seen {data.enourmous[0]} benefits. One even {data.stated[0]} that they <span className="text-color1">saved 50% of 
+          their {data.setUp[0]} time</span>, that's hundreds of hours per year. 
+          Another POWR Hero {data.stated[0]} consistent <span className="text-color1">growth on their {data.socialMedia[0]} by 200%.</span>
+        </TutorailHeader24>
+      </section>           
+
+      <section className="flex flex-col">
+        <CenteredContainer className="mt-16">
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-1/2 md:mr-4">
+              <div className="border-t-4 border-yellow-100 md:px-12 py-10 md:py-20">
+                <TutorailHeader32>
+                  Apps to Increase Conversions
+                </TutorailHeader32>
+                <TutorailParagraph className="mt-4">
+                  Now that you've got leads, it's time to convert them into paying customers. There are many ways to do this and POWR can help you with several different apps to maximise conversion on you {data.platform} website. 
+                </TutorailParagraph>
+              </div>
+            </div>
+
+            <div className="md:w-1/2 md:ml-4">
+              <TutorialAppBoxYellow
+                img="https://www.powrcdn.com/tutorial_pages_new_design/countdown-timer.svg"
+                title={data.countdownTimer.title}
+                text={data.countdownTimer.description}
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row mt-6 md:mt-8">
+            <div className="md:w-1/2 md:mr-4">
+              <TutorialAppBoxYellow
+                img="https://www.powrcdn.com/tutorial_pages_new_design/social-feed.svg"
+                title={data.socialFeed.title}
+                text={data.socialFeed.description}
+              />
+            </div>
+            <div className="md:w-1/2 md:ml-4 flex mt-6 md:mt-0">
+              <TutorialAppBoxYellow
+                img="https://www.powrcdn.com/tutorial_pages_new_design/testimonial-slider.svg"
+                title={data.testimonialSlider.title}
+                text={data.testimonialSlider.description}
+              />
+            </div>
+          </div>
+        </CenteredContainer>
+      </section> 
+
+      <section className="mt-16 flex justify-center">
+        <CenteredContainer className="flex-col items-center">
+          <TutorailHeader24 className="max-w-[750px] mx-auto text-center">
+            POWR will accelerate your growth with our all in one lead collection and conversion optimization tools. POWR is trusted on over 12 million websites worldwide
+          </TutorailHeader24>
+          
+          <div className="flex flex-row justify-evenly mt-20 w-full">
+            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/1.svg"/>
+            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/2.svg"/>
+            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/3.svg"/>
+            <img className="hidden md:block md:w-auto md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/4.svg"/>
+          </div>
+
+          <div className="flex flex-row justify-evenly mt-4 md:mt-20">
+            <img className="w-auto h-5 md:hidden"  src="https://www.powrcdn.com/tutorial_pages_new_design/4.svg"/>
+            <img className="w-auto h-5 md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/5.svg"/>
+            <img className="w-auto h-5 md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/6.svg"/>
+            <img className="hidden md:block md:w-auto md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/7.svg"/>
+          </div>
+          <div className="flex flex-row justify-evenly mt-4 md:mt-0 md:hidden">
+            <img className="w-auto h-5" src="https://www.powrcdn.com/tutorial_pages_new_design/7.svg"/>
+          </div>
+          <TutorailButtonBlue className="hidden md:block mt-16 mx-auto">
+            Start Free
+          </TutorailButtonBlue>
+        </CenteredContainer>
+      </section>           
+
+      <section className="mt-16">
+        <div className={`${styles.globebg} flex justify-center w-full relative`}>
+            <img
+              className="w-full absolute top-0"
+              src="https://www.powrcdn.com/tutorial_pages_new_design/wave1-bottom_3.svg"
+            />
+          <CenteredContainer className="mt-32 mb-36">
+            <TutorailHeader32>
+              About POWR
+            </TutorailHeader32>
+            <div className="flex flex-col md:flex-row mt-4">
+              <div className="md:w-1/2">
+                <TutorailParagraph className="max-w-[552px]">
+                  Founded in 2014, POWR helps small businesses grow online with over 60 {data.platform} website apps {data.designed[0]} to 
+                  collect more leads and {data.drive[0]} conversions. Our apps are easy-to-use, affordable, and seamless with our 
+                  no code approach to getting POWR apps {data.up[0]} on your site in under 5 minutes. With forms of all 
+                  kinds, including quote forms, {data.wholesale[0]} forms, contact forms, support forms, and more you can {data.give[0]} your website visitors an {data.easy[0]} way to get in touch. Popups to help {data.increase[0]} conversions and social feeds to help grow your audience online are some of our most popular apps. Testimonial sliders, comments, ratings, reviews, countdown timers, and every other POWR app is completely {data.customizable[0]}, and shareable both on your {data.platform} site and on your social media.             
+                </TutorailParagraph>
+              </div>
+              <div className="md:w-1/2 mt-10 md:mt-0">
+                <TutorialPictureCentered
+                  webp="https://www.powrcdn.com/tutorials/team.webp"
+                  png="https://www.powrcdn.com/tutorial_pages_new_design/team.png"
+                />
+              </div>
+            </div>
+            
+          </CenteredContainer>
+        </div>
+      </section>           
+
+      <section className="flex justify-center bg-color7 py-8">
+        <CenteredContainer>
+          <div className="flex flex-col md:flex-row">
+            <div className="flex flex-row justify-between md:w-1/2 md:mr-16">
+              <TutorialMenu title={data.menu.main.title} items={data.menu.main.items}/>
+              <TutorialMenu title={data.menu.main.title} items={data.menu.main.items}/>
+            </div>
+            <div className="flex flex-row md:w-1/2 justify-between mt-4 md:ml-16 md:mt-0">
+              <TutorialMenu title={data.menu.main.title} items={data.menu.main.items}/>
+              <TutorialMenu className title={data.menu.main.title} items={data.menu.main.items}/>
+            </div>
+          </div>
+          <div className="text-color8 leading-6 mt-8">©2021 POWR. All rights reserved</div>
+        </CenteredContainer>
+      </section>      
     </Layout>
   )
 }
