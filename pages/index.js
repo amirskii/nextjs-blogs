@@ -20,7 +20,7 @@ import TutorailHeader26 from '../components/tutorial_header26'
 import TutorialAppBox from '../components/tutorial_app_box'
 import TestimonialFilled from '../components/TestimonialFilled'
 import BlueGrayRoundedBox from '../components/tutorial_blue-gray_rounded_box'
-import tutorialData from './data.js'
+import tutorialData from '../data/data.js'
 import TutorialAppBoxYellow from '../components/tutorial_app_box_yellow'
 import TutorialMenu from '../components/tutorial_menu'
 

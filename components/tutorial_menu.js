@@ -7,6 +7,6 @@ export default function TutorialMenu(props) {
           <div className="text-color8 font-gordita-medium text-sm leading-5 mt-4">{item.name}</div>
         </a>
       )}
-  </div>
-)
+    </div>
+  )
 }
