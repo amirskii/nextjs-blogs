@@ -1,7 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles2 from './layout.module.css'
+import styles from '../styles/layout.module.css'
 import TutorailButtonBlue from './tutorial_button_blue'
 
 
@@ -16,16 +14,16 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <link_to rel='preload'></link_to>
-        <link as='font' crossorigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-regular-webfont-woff.woff'
+        <link as='font' crossOrigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-regular-webfont-woff.woff'
               rel='preload'/>
-        <link as='font' crossorigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-bold-webfont-woff.woff'
+        <link as='font' crossOrigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-bold-webfont-woff.woff'
               rel='preload'/>
-        <link as='font' crossorigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-medium-webfont-woff.woff'
+        <link as='font' crossOrigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-medium-webfont-woff.woff'
               rel='preload'/>
       </Head>
 
       <header
-        className={styles2.header}
+        className={styles.header}
         >
         <div className="flex flex-col w-full max-w-full z-10 pb-0 md:pb-48 lg:pb-0">
           <div className="container max-w-[1140px] px-4 self-center">
@@ -91,7 +89,7 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <div className={styles2.headerbg}>
+        <div className={styles.headerbg}>
           <img
               alt="POWR white wave"
               className="w-full max-w-full mt-auto -mb-3 md:-mb-8 lg:-mb-11"
