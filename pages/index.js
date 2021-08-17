@@ -23,17 +23,15 @@ import TutorialAppBoxYellow from '../components/tutorial_app_box_yellow'
 import TutorialMenu from '../components/tutorial_menu'
 
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   return {
     props: {
-      platform: 'HTML'
+      data: tutorialData,
     }
   }
 }
 
-export default function Home({ posts }) {
-  const data = tutorialData;
-
+export default function Home({ data }) {
   return (
     <Layout>
       <section className="flex flex-col">
