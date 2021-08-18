@@ -1,17 +1,20 @@
 import Head from 'next/head'
+import data from '../data/data'
 import styles from '../styles/layout.module.css'
 import TutorailButtonBlue from './tutorial_button_blue'
+import TutorialMetaTags from './tutorial_meta'
 
 
 export const siteTitle = 'Next.js Sample Website'
 
-export default function Layout({ children }) {
+export default function Layout(props) {
   return (
     <div className=''>
       <Head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <TutorialMetaTags data={data}/>
 
         <link_to rel='preload'></link_to>
         <link as='font' crossOrigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-regular-webfont-woff.woff'
@@ -20,6 +23,7 @@ export default function Layout({ children }) {
               rel='preload'/>
         <link as='font' crossOrigin='' href='https://public.powrcdn.com/fonts/gordita/gordita-medium-webfont-woff.woff'
               rel='preload'/>
+        <title>Best {data.platform} {data.app_name} Plugin for 2021 | Free {data.app_name}</title>        
       </Head>
 
       <header
@@ -34,6 +38,8 @@ export default function Layout({ children }) {
               >
                 <img
                   className="w-24 max-w-full not-italic leading-none normal-case align-middle border-0 box-border"
+                  loading="lazy"
+                  alt="POWR logo"
                   src="https://www.powrcdn.com/tutorial_pages_new_design/powr-logo.svg"
                 />
               </a>
@@ -63,14 +69,14 @@ export default function Layout({ children }) {
               >
                 <picture className="box-border">
                   <source
-                    srcset="
+                    srcSet="
                       https://www.powrcdn.com/tutorials/tutorials-section-1-tiny.webp
                     "
                     type="image/webp"
                     className="box-border"
                   />
                   <source
-                    srcset="
+                    srcSet="
                       https://www.powrcdn.com/tutorial_pages_new_design/tutorials-section-1-tiny.png
                     "
                     type="image/png"
@@ -97,7 +103,7 @@ export default function Layout({ children }) {
             />
         </div>
       </header>      
-      <main>{children}</main>
+      <main>{props.children}</main>
     </div>
   )
 }

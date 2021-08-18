@@ -7,6 +7,8 @@ export default function TutorialAppBox(props) {
     <img 
       className="ml-1"
       src={props.img}
+      loading="lazy"
+      alt={props.title}
     />
     <TutorailHeader18 className="mt-6">
       {props.title}

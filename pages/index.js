@@ -33,7 +33,7 @@ export async function getStaticProps(context) {
 
 export default function Home({ data }) {
   return (
-    <Layout>
+    <Layout data={data}>
       <section className="flex flex-col">
         <CenteredContainer className="pb-10">
           <div className="flex flex-col md:flex-row">
@@ -55,18 +55,19 @@ export default function Home({ data }) {
             <div className="md:w-1/2 flex-shrink-0 md:flex relative justify-center px-4 min-w-64 box-border">
               <picture className="box-border mt-16">
                 <source
-                  srcset="https://www.powrcdn.com/tutorials/img1.webp"
+                  srcSet="https://www.powrcdn.com/tutorials/img1.webp"
                   type="image/webp"
                 />
                 <source
-                  srcset="https://www.powrcdn.com/tutorials/img1.png"
+                  srcSet="https://www.powrcdn.com/tutorials/img1.png"
                   type="image/png"
                 />
                 <img
-                  alt="Add About Us to HTML"
+                  alt={`${data.app_name} to ${data.platform}`}
                   className="mx-0 mt-4 mb-0 w-64 max-w-full align-middle border-0 box-border"
                   loading="lazy"
                   src="https://www.powrcdn.com/tutorials/img1.png"
+                  alt={`${data.app_name} to ${data.platform}`}
                 />
               </picture>
             </div>
@@ -97,18 +98,18 @@ export default function Home({ data }) {
           <div className="flex flex-col md:flex-row">
             
             <div className="md:w-1/2 flex-shrink-0 md:flex relative justify-center px-4 min-w-64 box-border">
-              <picture class="box-border">
+              <picture className="box-border">
                 <source
-                  srcset="https://www.powrcdn.com/tutorials/img2.webp"
+                  srcSet="https://www.powrcdn.com/tutorials/img2.webp"
                   type="image/webp"
                 />
                 <source
-                  srcset="https://www.powrcdn.com/tutorials/img2.png"
+                  srcSet="https://www.powrcdn.com/tutorials/img2.png"
                   type="image/png"
                 />
                 <img
                   alt={`Add ${data.app_name} to ${data.platform}`}
-                  class="w-8/12 max-w-full align-middle border-0 box-border"
+                  className="w-8/12 max-w-full align-middle border-0 box-border"
                   loading="lazy"
                   data-cfsrc="https://www.powrcdn.com/tutorials/img2.png"
                   src="https://www.powrcdn.com/tutorials/img2.png"
@@ -151,15 +152,15 @@ export default function Home({ data }) {
             <div className="max-w-[300px] flex-shrink-0 flex justify-center px-4 min-w-64 box-border mx-auto">
               <picture className="box-border mt-16">
                 <source
-                  srcset="https://www.powrcdn.com/tutorials/img3.webp"
+                  srcSet="https://www.powrcdn.com/tutorials/img3.webp"
                   type="image/webp"
                 />
                 <source
-                  srcset="https://www.powrcdn.com/tutorials/img3.png"
+                  srcSet="https://www.powrcdn.com/tutorials/img3.png"
                   type="image/png"
                 />
                 <img
-                  alt="Add About Us to HTML"
+                  alt={`Add ${data.app_name} to ${data.platform}`}
                   className="mx-0 mt-4 mb-0 max-w-[300px] max-w-full align-middle border-0 box-border"
                   loading="lazy"
                   src="https://www.powrcdn.com/tutorials/img3.png"
@@ -242,7 +243,8 @@ export default function Home({ data }) {
             <TutorialPictureCentered
               webp="https://www.powrcdn.com/tutorials/support.webp"
               png="https://www.powrcdn.com/tutorial_pages_new_design/support.png"
-              className="h-202 content-center"            
+              className="h-202 content-center"
+              alt='Support feature'
             />
             <TutorailHeader20White className="mt-8 mx-4 text-center">
               Because POWR is built for scale, it has the most advanced built-in security and high-volume capabilities available. 
@@ -253,6 +255,7 @@ export default function Home({ data }) {
               webp="https://www.powrcdn.com/tutorials/security.webp"
               png="https://www.powrcdn.com/tutorial_pages_new_design/security.png"            
               className="h-202"            
+              alt='security feature'
             />
             <TutorailHeader20 className="mt-8 mx-4 text-center">
               And to top it off, customer support is available 24/7, as well as a rich knowledge base.
@@ -304,14 +307,15 @@ export default function Home({ data }) {
             </div>
             <div className="md:w-1/2 flex flex-col">
               <img
-                class="pt-20 w-[250px] lg:ml-16 hidden md:block"
+                className="pt-20 w-[250px] lg:ml-16 hidden md:block"
                 src="https://www.powrcdn.com/tutorial_pages_new_design/arrow.svg"
-              />
-              <div class="mt-16 md:mt-6 aspect-w-16 aspect-h-9">
+                alt={`${data.app_name} to ${data.platform}`}
+                />
+              <div className="mt-16 md:mt-6 aspect-w-16 aspect-h-9">
                 <iframe
-                  allowfullscreen="true"
+                  allowFullScreen={true}
                   allowscriptaccess="always"
-                  frameborder="0"
+                  frameBorder="0"
                   loading="lazy"
                   src="https://www.youtube.com/embed/etmYiuHktmQ?autoplay=0"
                   title="YouTube video player"
@@ -324,7 +328,7 @@ export default function Home({ data }) {
 
       <section className="flex flex-col">
         <CenteredContainer>
-          <BlueRoundedBox className="bg-blue">
+          <BlueRoundedBox data={data} className="bg-blue">
             <div className="flex flex-col md:flex-row content-center items-center">
               <p className="font-gordita-medium text-2xl leading-9 text-center text-white">
                 Most importantly, POWR {data.app_name} has proven results. Case studies have shown POWR {data.app_name} to <span className="text-indigo-600">boost conversions over 30%!</span> 
@@ -355,7 +359,7 @@ export default function Home({ data }) {
                 1,200,348
               </TutorailHeader26>
               <p
-                class="font-gordita-medium tracking-wider leading-5 text-center text-color1 uppercase box-border"
+                className="font-gordita-medium tracking-wider leading-5 text-center text-color1 uppercase box-border"
               >
                 {data.app_name} Installations
               </p>
@@ -365,7 +369,7 @@ export default function Home({ data }) {
                 8,230,145
               </TutorailHeader26>
               <p
-                class="font-gordita-medium tracking-wider leading-5 text-center text-color1 uppercase box-border"
+                className="font-gordita-medium tracking-wider leading-5 text-center text-color1 uppercase box-border"
               >
                 POWR PLUGINS ON WEBSITES
               </p>
@@ -376,13 +380,16 @@ export default function Home({ data }) {
       <section className="flex flex-col">
         <div className={`${styles.globebg} w-full relative`}>
           <img
-            class="w-full"
+            className="w-full"
             src="https://www.powrcdn.com/tutorial_pages_new_design/wave1-bottom_3.svg"
+            alt={`${data.app_name} to ${data.platform}`}
           />
           <div className="absolute top-0 w-full grid items-center justify-center">          
             <img
-              class="hidden md:block -mt-24 w-[970px]"
+              className="hidden md:block -mt-24 w-[970px]"
               src="https://www.powrcdn.com/tutorial_pages_new_design/globe.png"
+              loading="lazy"
+              alt='Globe'
             />
             <div className="flex flex-col" >
               <div className="md:absolute md:top-[164px] left-[15%] mx-auto">
@@ -400,8 +407,9 @@ export default function Home({ data }) {
           <div className="h-[970px] md:h-[280px]">
           </div>
           <img
-            class="z-0 w-full max-w-full "
+            className="z-0 w-full max-w-full "
             src="https://www.powrcdn.com/tutorial_pages_new_design/wave2-bottom.svg"
+            alt={`${data.app_name} to ${data.platform}`}
           />
 
         </div>
@@ -418,6 +426,7 @@ export default function Home({ data }) {
                 webp="https://www.powrcdn.com/tutorials/image-5.webp"
                 png="https://www.powrcdn.com/tutorial_pages_new_design/image-5.png"
                 className="md:min-h-[360px]"
+                alt={`Add ${data.app_name} to ${data.platform}`}
               />
               <TutorailParagraph className="mt-4 md:mt-16">
                 In a short time of signing up with POWR popup they were able to increase their contacts over 250% (over 600 real contacts) and have continuously grown their social media to over 6000 followers utilizing POWR social feed on their site. They added POWR Slider as a visual way to quickly show their customers as they are entering the homepage how the products look in real life. It showcases their products well and seamlessly gave customers a great on-site experience. In fact they found that visitors who interacted with POWR apps on their site were engaged 2.5 times longer than any other person on their site.
@@ -432,6 +441,7 @@ export default function Home({ data }) {
                 <TutorialPicture
                   webp="https://www.powrcdn.com/tutorials/image-7.webp"
                   png="https://www.powrcdn.com/tutorial_pages_new_design/image-7.png"
+                  alt={`Add ${data.app_name} to ${data.platform}`}
                 />
               </div>
             </div>
@@ -445,10 +455,11 @@ export default function Home({ data }) {
             <div className="flex flex-col md:flex-row md:justify-evenly">
               
               <div className="mt-8 relative px-4 text-center box-border md:float-left md:w-1/3">
-                <div class="box-border flex justify-center">
+                <div className="box-border flex justify-center">
                   <img 
                     className="h-12 max-w-full align-middle border-0"
                     src="https://www.powrcdn.com/tutorial_pages_new_design/vector-1.svg"
+                    alt={`${data.app_name} to ${data.platform}`}
                   />
                 </div>
                 <TutorailHeader20 className="mt-4">
@@ -457,10 +468,11 @@ export default function Home({ data }) {
               </div>
 
               <div className="mt-8 relative px-4 text-center box-border md:float-left md:w-1/3">
-                <div class="box-border flex justify-center">
+                <div className="box-border flex justify-center">
                   <img 
                     className="h-12 max-w-full align-middle border-0"
                     src="https://www.powrcdn.com/tutorial_pages_new_design/vector-2.svg"
+                    alt={`${data.app_name} to ${data.platform}`}
                   />
                 </div>
                 <TutorailHeader20 className="mt-4">
@@ -469,10 +481,11 @@ export default function Home({ data }) {
               </div>
 
               <div className="mt-8 relative px-4 text-center box-border md:float-left md:w-1/3">
-                <div class="box-border flex justify-center">
+                <div className="box-border flex justify-center">
                   <img 
                     className="mb-4 h-12 max-w-full align-middle border-0"
                     src="https://www.powrcdn.com/tutorial_pages_new_design/vector.svg"
+                    alt={`${data.app_name} to ${data.platform}`}
                   />
                 </div>
                 <TutorailHeader20 className="mt-4">
@@ -492,6 +505,7 @@ export default function Home({ data }) {
               <img 
                 className="md:w-1/4"
                 src="https://www.powrcdn.com/tutorial_pages_new_design/undraw.svg"
+                alt={`${data.app_name} to ${data.platform}`}
               />
 
               <div className="w-auto mt-8 md:ml-8 flex flex-col content-center items-center my-auto">
@@ -500,8 +514,8 @@ export default function Home({ data }) {
                 </TutorailHeader20>
                 <TutorailParagraph className="mt-4">
                   Then you'd be {data.happy[0]} to know agency users have 
-                  <span class="text-color1"> reported 100% uptime </span>and
-                  <span class="text-color1"> {data.tons[0]} of hours saved</span> every week with the ability to {data.create[0]} client apps in a matter of minutes. "
+                  <span className="text-color1"> reported 100% uptime </span>and
+                  <span className="text-color1"> {data.tons[0]} of hours saved</span> every week with the ability to {data.create[0]} client apps in a matter of minutes. "
                 </TutorailParagraph>
               </div>
             </div>
@@ -623,20 +637,30 @@ export default function Home({ data }) {
           </TutorailHeader24>
           
           <div className="flex flex-row justify-evenly mt-20 w-full">
-            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/1.svg"/>
-            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/2.svg"/>
-            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/3.svg"/>
-            <img className="hidden md:block md:w-auto md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/4.svg"/>
+            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/1.svg"
+                              alt={`${data.app_name} to ${data.platform}`}
+                              />
+            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/2.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
+            <img className="w-auto h-5 md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/3.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
+            <img className="hidden md:block md:w-auto md:h-auto"  src="https://www.powrcdn.com/tutorial_pages_new_design/4.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
           </div>
 
           <div className="flex flex-row justify-evenly mt-4 md:mt-20">
-            <img className="w-auto h-5 md:hidden"  src="https://www.powrcdn.com/tutorial_pages_new_design/4.svg"/>
-            <img className="w-auto h-5 md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/5.svg"/>
-            <img className="w-auto h-5 md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/6.svg"/>
-            <img className="hidden md:block md:w-auto md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/7.svg"/>
+            <img className="w-auto h-5 md:hidden"  src="https://www.powrcdn.com/tutorial_pages_new_design/4.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
+            <img className="w-auto h-5 md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/5.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
+            <img className="w-auto h-5 md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/6.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
+            <img className="hidden md:block md:w-auto md:h-auto" src="https://www.powrcdn.com/tutorial_pages_new_design/7.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
           </div>
           <div className="flex flex-row justify-evenly mt-4 md:mt-0 md:hidden">
-            <img className="w-auto h-5" src="https://www.powrcdn.com/tutorial_pages_new_design/7.svg"/>
+            <img className="w-auto h-5" src="https://www.powrcdn.com/tutorial_pages_new_design/7.svg"
+              alt={`${data.app_name} to ${data.platform}`}/>
           </div>
           <TutorailButtonBlue className="hidden md:block mt-16 mx-auto">
             Start Free
@@ -649,6 +673,7 @@ export default function Home({ data }) {
             <img
               className="w-full absolute top-0"
               src="https://www.powrcdn.com/tutorial_pages_new_design/wave1-bottom_3.svg"
+              alt={`${data.app_name} to ${data.platform}`}
             />
           <CenteredContainer className="mt-32 mb-36">
             <TutorailHeader32>
@@ -667,6 +692,7 @@ export default function Home({ data }) {
                 <TutorialPictureCentered
                   webp="https://www.powrcdn.com/tutorials/team.webp"
                   png="https://www.powrcdn.com/tutorial_pages_new_design/team.png"
+                  alt={`Add ${data.app_name} to ${data.platform}`}
                 />
               </div>
             </div>

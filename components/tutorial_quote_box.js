@@ -6,12 +6,12 @@ export default function QuotedBox(props) {
       <div className="-mt-3 box-border flex justify-center">
           <picture>
             <source
-              srcset="https://www.powrcdn.com/tutorials/quotes.webp"
+              srcSet="https://www.powrcdn.com/tutorials/quotes.webp"
               type="image/webp"
-              class="box-border"
+              className="box-border"
             />
             <source
-              srcset="https://www.powrcdn.com/tutorials/quotes.png"
+              srcSet="https://www.powrcdn.com/tutorials/quotes.png"
               type="image/png"
             />
             <img
@@ -24,7 +24,7 @@ export default function QuotedBox(props) {
           </picture>
         </div>
 
-        <div class="p-8 box-border">
+        <div className="p-8 box-border">
           <div
             className="relative px-4 lg:w-full box-border"
           >

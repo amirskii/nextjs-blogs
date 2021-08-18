@@ -6,12 +6,11 @@ export default function TutorialTestimonial(props) {
       <div className="box-border flex justify-end mr-14">
           <picture>
             <source
-              srcset="https://www.powrcdn.com/tutorials/quotes.webp"
+              srcSet="https://www.powrcdn.com/tutorials/quotes.webp"
               type="image/webp"
-              class="box-border"
             />
             <source
-              srcset="https://www.powrcdn.com/tutorials/quotes.png"
+              srcSet="https://www.powrcdn.com/tutorials/quotes.png"
               type="image/png"
             />
             <img
