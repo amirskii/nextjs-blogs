@@ -8,6 +8,7 @@
   src: local("Gordita"), url("https://public.powrcdn.com/fonts/gordita/gordita-regular-webfont-woff.woff") format("woff"), url("https://public.powrcdn.com/fonts/gordita/gordita-regular-webfont-woff2.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -15,6 +16,7 @@
   src: local("Gordita Bold"), url("https://public.powrcdn.com/fonts/gordita/gordita-bold-webfont-woff.woff") format("woff"), url("https://public.powrcdn.com/fonts/gordita/gordita-bold-webfont-woff2.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -22,6 +24,7 @@
   src: local("Gordita Medium"), url("https://public.powrcdn.com/fonts/gordita/gordita-medium-webfont-woff.woff") format("woff"), url("https://public.powrcdn.com/fonts/gordita/gordita-medium-webfont-woff2.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
